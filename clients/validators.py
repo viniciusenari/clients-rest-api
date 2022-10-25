@@ -1,11 +1,12 @@
 import re
 
 def valid_ssn(value):
-    return len(value) == 9
+    regex = '^(?!666|000|9\\d{2})\\d{3}(?!00)\\d{2}(?!0{4})\\d{4}$'
+    return re.search(regex, value)
     
 def valid_name(value):
     return value.isalpha()
 
 def valid_phone_number(value):
-    format = '^[0-9]{3}-[0-9]{3}-[0-9]{4}$'
-    return re.search(format, value)
+    regex = '^[0-9]{3}-[0-9]{3}-[0-9]{4}$'
+    return re.search(regex, value)

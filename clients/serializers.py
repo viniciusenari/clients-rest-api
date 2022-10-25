@@ -9,7 +9,7 @@ class ClientSerializer(serializers.ModelSerializer):
     
     def validate(self, data):
         if not valid_ssn(data['ssn']):
-            raise serializers.ValidationError({'ssn':'SSN must be 9 digits'})
+            raise serializers.ValidationError({'ssn':'Invalid SSN'})
         if not valid_name(data['name']):
             raise serializers.ValidationError({'name':'Name must be letters only'})
         if not valid_phone_number(data['phone']):
