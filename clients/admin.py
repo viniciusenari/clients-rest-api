@@ -8,6 +8,7 @@ class Clients(admin.ModelAdmin):
     list_filter = ('active',)
     list_editable = ('active',)
     list_per_page = 25
+    ordering = ('name',)
 
 admin.site.register(Client, Clients)
 
